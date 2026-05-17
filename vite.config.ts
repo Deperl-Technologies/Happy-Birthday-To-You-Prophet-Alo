@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import nodeResolve from "@rollup/plugin-node-resolve";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   server: {
     host: "::",
@@ -15,6 +15,11 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ["firebase"],
+    include: ["firebase/firestore"],
+  },
+  build: {
+    rollupOptions: {
+      plugins: [nodeResolve()],
+    },
   },
 });
