@@ -289,7 +289,7 @@ export default function Chamber2() {
                       fontFamily: "'EB Garamond', Georgia, serif",
                     }}
                   >
-                    Planter &amp; Zonal Superintendent · GMPM Adamimogo Global Outreach
+                    Planter &amp; Zonal Superintendent · GMPM Adamimogo Worldwide 
                   </p>
 
                   {/* Gold center ornament */}
