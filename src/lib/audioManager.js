@@ -31,6 +31,7 @@ let isDucked = false;
 let userVolume = 0.28;
 const DUCK_VOLUME = 0.04;
 const listeners = new Set();
+export const MEDIA_PAUSE_EVENT = "adamimogo:pause-media";
 
 // Guard: prevent infinite error loop if tracks fail to load
 let consecutiveErrors = 0;
@@ -75,6 +76,11 @@ function notify() {
   listeners.forEach((fn) => fn(state));
 }
 
+export function pauseOtherMedia(source) {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent(MEDIA_PAUSE_EVENT, { detail: { source } }));
+}
+
 export function getState() {
   return {
     isPlaying,
@@ -93,6 +99,15 @@ function clearFade() {
     clearInterval(fadeTimer);
     fadeTimer = null;
   }
+}
+
+function stopImmediately() {
+  const a = getOrCreateAudio();
+  clearFade();
+  a.pause();
+  a.volume = 0;
+  isPlaying = false;
+  notify();
 }
 
 function fadeTo(targetVol, stepSize = 0.025, intervalMs = 80, onDone) {
@@ -124,6 +139,7 @@ export function loadTrack(index) {
 
 export function play(index) {
   const a = getOrCreateAudio();
+  pauseOtherMedia("music");
   if (index !== undefined && index !== currentIndex) {
     loadTrack(index);
     currentIndex = index;
@@ -232,6 +248,14 @@ export function subscribe(fn) {
 
 export function tryAutoPlay() {
   if (!isPlaying) play();
+}
+
+if (typeof window !== "undefined") {
+  window.addEventListener(MEDIA_PAUSE_EVENT, (event) => {
+    if (event?.detail?.source !== "music" && isPlaying) {
+      stopImmediately();
+    }
+  });
 }
 
 const audioManager = {

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Radio, Play, Square, Loader } from "lucide-react";
+import { MEDIA_PAUSE_EVENT, pauseOtherMedia } from "@/lib/audioManager";
 
 // Animated frequency wave background
 function FrequencyWaves() {
@@ -66,8 +67,23 @@ export default function AdamimogoFM() {
   const [error, setError] = useState(null);
   const audioRef = useRef(null);
 
+  useEffect(() => {
+    const handlePauseEvent = (event) => {
+      if (event.detail?.source !== "radio" && audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = "";
+        setPlayingStation(null);
+        setLoading(false);
+      }
+    };
+
+    window.addEventListener(MEDIA_PAUSE_EVENT, handlePauseEvent);
+    return () => window.removeEventListener(MEDIA_PAUSE_EVENT, handlePauseEvent);
+  }, []);
+
   const handlePlay = (station) => {
     setError(null);
+    pauseOtherMedia("radio");
 
     // Stop if same station clicked
     if (playingStation?.city === station.city) {

@@ -170,8 +170,8 @@ export default function BeyondThePulpit() {
                 </h3>
                 <p
                   className="leading-relaxed"
-                  style={{ fontSize: "clamp(0.8rem, 2.5vw, 0.9rem)" }}
                   style={{
+                    fontSize: "clamp(0.8rem, 2.5vw, 0.9rem)",
                     color: item.dark ? "rgba(255,255,255,0.7)" : "rgba(26,0,0,0.65)",
                   }}
                 >

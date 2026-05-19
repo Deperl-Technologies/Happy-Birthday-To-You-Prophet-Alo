@@ -1,72 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Camera, ChevronLeft, ChevronRight, X } from "lucide-react";
-
-// ─── Import all 22 photos ───────────────────────────────────────────
-import photo1 from "../assets/images/photo1.jpg";
-import photo2 from "../assets/images/photo2.jpg";
-import photo3 from "../assets/images/photo3.jpg";
-import photo4 from "../assets/images/photo4.jpg";
-import photo5 from "../assets/images/photo5.jpg";
-import photo6 from "../assets/images/photo6.jpg";
-import photo7 from "../assets/images/photo7.jpg";
-import photo8 from "../assets/images/photo8.jpg";
-import photo9 from "../assets/images/photo9.jpg";
-import photo10 from "../assets/images/photo10.jpg";
-import photo11 from "../assets/images/photo11.jpg";
-import photo12 from "../assets/images/photo12.jpg";
-import photo13 from "../assets/images/photo13.jpg";
-import photo14 from "../assets/images/photo14.jpg";
-import photo15 from "../assets/images/photo15.jpg";
-import photo16 from "../assets/images/photo16.jpg";
-import photo17 from "../assets/images/photo17.jpg";
-import photo18 from "../assets/images/photo18.jpg";
-import photo19 from "../assets/images/photo19.jpg";
-import photo20 from "../assets/images/photo20.jpg";
-import photo21 from "../assets/images/photo21.jpg";
-import photo22 from "../assets/images/photo22.jpg";
-
-// ─── Slider photos (first 4) ────────────────────────────────────────
-const sliderPhotos = [
-  { src: photo1, caption: "A Man Sent By God", sub: "Prophet Sam Olu Alo" },
-  {
-    src: photo2,
-    caption: "The Voice That Shakes The Heavens",
-    sub: "Adamimogo Worldwide",
-  },
-  {
-    src: photo3,
-    caption: "Father To Nations",
-    sub: "C.A.C Grace of Mercy Prayer Mountain",
-  },
-  {
-    src: photo4,
-    caption: "The Anointing That Breaks The Yoke",
-    sub: "A Legacy In Motion",
-  },
-];
-
-// ─── Gallery photos (remaining 18) ──────────────────────────────────
-const galleryPhotos = [
-  { src: photo5, caption: "The Crusade Ground" },
-  { src: photo6, caption: "Moments of Glory" },
-  { src: photo7, caption: "The Prophet Speaks" },
-  { src: photo8, caption: "Fire From Heaven" },
-  { src: photo9, caption: "Nations Gathering" },
-  { src: photo10, caption: "Sacred Anointing" },
-  { src: photo11, caption: "The Berlin Crusade" },
-  { src: photo12, caption: "Jesus City Lagos" },
-  { src: photo13, caption: "The Planter" },
-  { src: photo14, caption: "Ministry Moments" },
-  { src: photo15, caption: "A Life Poured Out" },
-  { src: photo16, caption: "The Prayer Mountain" },
-  { src: photo17, caption: "Anniversary Celebration" },
-  { src: photo18, caption: "Anniversary Celebration" },
-  { src: photo19, caption: "Anniversary Celebration" },
-  { src: photo20, caption: "Grace of Mercy Church" },
-  { src: photo21, caption: "Ido-Ekiti Roots" },
-  { src: photo22, caption: "A Legacy In Frames" },
-];
+import {
+  galleryPhotos,
+  galleryPhotoDetails,
+  sliderPhotos,
+} from "../data/galleryPhotos.js";
 
 // ─── Hero Slider ─────────────────────────────────────────────────────
 function HeroSlider() {
@@ -251,13 +190,6 @@ function Lightbox({ photo, onClose, onPrev, onNext }) {
             border: "1px solid rgba(217,119,6,0.3)",
           }}
         />
-        <p
-          className="text-center mt-3 font-serif italic"
-          style={{ color: "#d97706", fontFamily: "Georgia, serif" }}
-        >
-          {photo.caption}
-        </p>
-
         {/* Close */}
         <button
           onClick={onClose}
@@ -455,7 +387,8 @@ export default function PhotoGallery() {
             >
               <img
                 src={photo.src}
-                alt={photo.caption}
+                alt=""
+                aria-hidden="true"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
@@ -507,7 +440,8 @@ export default function PhotoGallery() {
             >
               <img
                 src={photo.src}
-                alt={photo.caption}
+                alt=""
+                aria-hidden="true"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -542,7 +476,7 @@ export default function PhotoGallery() {
       <AnimatePresence>
         {lightbox !== null && (
           <Lightbox
-            photo={galleryPhotos[lightbox]}
+            photo={galleryPhotoDetails[lightbox]}
             onClose={closeLightbox}
             onPrev={prevPhoto}
             onNext={nextPhoto}

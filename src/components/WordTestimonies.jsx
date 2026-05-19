@@ -53,6 +53,108 @@ const SEED_TESTIMONIES = [
     location: "Ido-Ekiti, Nigeria",
     text: "Adamimogo FM 107.7 reached my village when I had no access to a church. I sat under Prophet Sam's radio broadcasts for two years before I ever met him. His voice carried something — an anointing that comes through frequencies. I gave my life to God listening to that radio. Now I lead others to do the same.",
   },
+  {
+    name: "Sister Joy Adebayo",
+    branch: "Adamimogo Grace Assembly, Abeokuta",
+    location: "Abeokuta, Nigeria",
+    text: "My marriage was collapsing and my home had become a battlefield. During a Sunday service, the prophet prayed and declared peace over our family. Within weeks, the bitterness broke, my husband returned, and our home became calm again. Today we serve together in church. God restored what looked impossible.",
+  },
+  {
+    name: "Brother Michael Afolabi",
+    branch: "CAC Grace of Mercy, Lagos",
+    location: "Surulere, Nigeria",
+    text: "For years I struggled with unemployment and shame. I attended one of Prophet Sam's revival nights and received a simple word: 'Prepare, doors are opening.' The very next week, the interview call came. Today I work in a role I once prayed for. I know that word came from God.",
+  },
+  {
+    name: "Deaconess Esther Nwosu",
+    branch: "CAC Grace of Mercy, Ibadan",
+    location: "Ibadan, Nigeria",
+    text: "I used to battle recurring nightmares and fear every night. After prayers from the man of God, the torment stopped completely. I sleep in peace now. My children also began to experience peace in the house. What prayer could not fix, God fixed through His servant.",
+  },
+  {
+    name: "Brother Daniel Akinyemi",
+    branch: "Adamimogo Worldwide Youth",
+    location: "Lagos, Nigeria",
+    text: "I was full of anger and heading down the wrong path. Prophet Sam's counsel and fatherly correction saved me. He did not condemn me; he pointed me back to destiny. That one encounter changed my direction, and today I'm in school, serving God, and mentoring others.",
+  },
+  {
+    name: "Sister Deborah Mensah",
+    branch: "CAC Grace of Mercy, Toronto",
+    location: "Toronto, Canada",
+    text: "I came to Canada with a childlike prayer and no clear future. The prophet spoke over my life and said I would build and not beg. That word kept me going through hard seasons. Today I own a small business and support other women in our congregation. God truly establishes His word.",
+  },
+  {
+    name: "Pastor Joshua Ige",
+    branch: "Adamimogo School of Prayer",
+    location: "Lagos, Nigeria",
+    text: "The fire of prayer I carry today was born under Prophet Sam's teaching. He taught us to tarry, to listen, and to obey the Spirit. Many people can preach about prayer, but he models it. My life and ministry now have a depth they never had before.",
+  },
+  {
+    name: "Sister Nneka Udo",
+    branch: "CAC Grace of Mercy, Finland",
+    location: "Helsinki, Finland",
+    text: "When I first joined the Finnish fellowship, I was lonely and far from home. Prophet Sam's word and pastoral care made me feel seen. I found family, faith, and purpose again. That small church in a cold land became the place where my heart was healed.",
+  },
+  {
+    name: "Brother Taiwo Oladipo",
+    branch: "Adamimogo FM Listener",
+    location: "Abeokuta, Nigeria",
+    text: "I was not even attending church regularly when I started listening to Adamimogo FM in my car. The songs, prayers, and messages softened my heart. Eventually I returned fully to God. It was like the radio became an altar for me.",
+  },
+  {
+    name: "Sister Bimpe Afolayan",
+    branch: "CAC Grace of Mercy, Port Harcourt",
+    location: "Port Harcourt, Nigeria",
+    text: "I had lived with chronic fear after losing my first child, and I could barely sleep through the night. During prayer, Prophet Sam spoke peace over me and prayed with such tenderness that I knew God had heard. The panic left gradually, and for the first time in years I began sleeping without medication.",
+  },
+  {
+    name: "Brother Kelechi Nwankwo",
+    branch: "Adamimogo Grace Assembly, Enugu",
+    location: "Enugu, Nigeria",
+    text: "I came into the service carrying a small business that was collapsing under debt. After prayers and counsel, I started making decisions with clarity instead of fear. Within months, the business stabilized and I was able to pay workers again. That season taught me not to despise spiritual direction.",
+  },
+  {
+    name: "Deaconess Titilayo Ogunleye",
+    branch: "CAC Grace of Mercy, Akure",
+    location: "Akure, Nigeria",
+    text: "My husband and I had been separated for almost a year, and our children were asking questions I could not answer. Prophet Sam's message on restoration convicted both of us deeply. We reconciled quietly, and by the next Sunday we were back in church together. Our home is peaceful again.",
+  },
+  {
+    name: "Brother Samuel Anjorin",
+    branch: "Adamimogo Worldwide Youth",
+    location: "Ibadan, Nigeria",
+    text: "I was struggling with school and carrying a lot of bitterness. One altar call changed something in me. The prophet spoke to me like a father, not like a stranger, and I went home determined to do better. My grades improved, and more importantly, my heart changed.",
+  },
+  {
+    name: "Sister Folasade Adekunle",
+    branch: "CAC Grace of Mercy, Manchester",
+    location: "Manchester, United Kingdom",
+    text: "I joined the fellowship in Manchester after moving abroad and feeling completely out of place. The church family welcomed me, but it was the consistent prophetic words and prayers that steadied me. I found community, direction, and a renewed desire to serve God where I was planted.",
+  },
+  {
+    name: "Pastor Emmanuel Ojo",
+    branch: "Adamimogo School of Prayer",
+    location: "Lagos, Nigeria",
+    text: "I came to the School of Prayer as someone who knew how to preach but not how to wait on God. Under Prophet Sam's teaching, my devotional life deepened in a way I had never experienced before. My ministry became quieter, stronger, and more fruitful.",
+  },
+  {
+    name: "Sister Morenike Adejumo",
+    branch: "CAC Grace of Mercy, Ido-Ekiti",
+    location: "Ido-Ekiti, Nigeria",
+    text: "My son had been battling repeated sickness and we had spent so much money on treatments. After a prayer meeting at the branch, the family began to experience remarkable peace and the attacks stopped. We returned with thanksgiving because God truly visited us.",
+  },
+  {
+    name: "Brother Kingsley Eze",
+    branch: "Adamimogo FM Listener",
+    location: "Lagos, Nigeria",
+    text: "I first heard the messages while driving late at night, and I could not ignore how direct they were. The preaching challenged me to stop living carelessly and return to God with sincerity. Today I still listen, and the broadcasts continue to strengthen me week by week.",
+  },
+  {
+    name: "Deaconess Rita Williams",
+    branch: "CAC Grace of Mercy, Toronto",
+    location: "Toronto, Canada",
+    text: "When I relocated to Canada, I had to rebuild my life from the ground up. The ministry gave me a spiritual home, but Prophet Sam's words gave me courage. I found work, made friends, and learned that God can establish a person even far from familiar soil.",
+  },
 ];
 
 // Animated quote card

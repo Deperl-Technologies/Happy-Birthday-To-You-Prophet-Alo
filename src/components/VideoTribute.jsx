@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
-import audioManager from "@/lib/audioManager";
+import audioManager, { MEDIA_PAUSE_EVENT, pauseOtherMedia } from "@/lib/audioManager";
 
 /**
  * TikTok video embed — "A Voice That Shakes the Heavens"
@@ -15,16 +15,16 @@ const TIKTOK_VIDEO_ID = "7508159242742861061";
 export default function VideoTribute() {
   const [playing, setPlaying] = useState(false);
 
-  // Listen for TikTok postMessage state changes to duck/restore music
   useEffect(() => {
     const handleMessage = (e) => {
       try {
         const data = typeof e.data === "string" ? JSON.parse(e.data) : e.data;
-        // TikTok Player API events
         if (data?.type === "onStateChange" || data?.event === "onStateChange") {
           const state = data?.value ?? data?.info;
           if (state === "playing" || state === 1) {
+            pauseOtherMedia("tiktok");
             audioManager.duckMusic();
+            setPlaying(true);
           } else if (
             state === "paused" ||
             state === "ended" ||
@@ -36,11 +36,23 @@ export default function VideoTribute() {
         }
       } catch (_) {}
     };
+
+    const handlePauseEvent = (event) => {
+      if (event.detail?.source !== "tiktok") {
+        setPlaying(false);
+      }
+    };
+
     window.addEventListener("message", handleMessage);
-    return () => window.removeEventListener("message", handleMessage);
+    window.addEventListener(MEDIA_PAUSE_EVENT, handlePauseEvent);
+    return () => {
+      window.removeEventListener("message", handleMessage);
+      window.removeEventListener(MEDIA_PAUSE_EVENT, handlePauseEvent);
+    };
   }, []);
 
   const handlePlay = () => {
+    pauseOtherMedia("tiktok");
     setPlaying(true);
     audioManager.duckMusic();
   };
@@ -215,7 +227,12 @@ export default function VideoTribute() {
                 >
                   {playing ? (
                     <iframe
-                      className="absolute inset-0 w-full h-full"
+                      className="absolute top-1/2 left-1/2 block"
+                      style={{
+                        width: "140%",
+                        height: "140%",
+                        transform: "translate(-50%, -50%)",
+                      }}
                       src={tiktokSrc}
                       title="Prophet Sam Olu Alo — Video Tribute"
                       frameBorder="0"

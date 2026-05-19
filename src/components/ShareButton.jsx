@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Share2, X, Copy, Check } from "lucide-react";
+import { ArrowUpRight, Check, Copy, Link2, MessageCircleMore, Share2, X } from "lucide-react";
+import ProjectIcon from "./ProjectIcon.jsx";
 
 const TRIBUTE_URL = "https://celebrate-prophet-sam-alo-birthday.vercel.app";
 
@@ -11,7 +12,7 @@ const shareOptions = [
   {
     id: "whatsapp",
     label: "WhatsApp",
-    icon: "💬",
+    icon: MessageCircleMore,
     color: "#25D366",
     hoverBg: "rgba(37,211,102,0.12)",
     href: `https://wa.me/?text=${encodeURIComponent(SACRED_MESSAGE + "\n\n" + TRIBUTE_URL)}`,
@@ -19,7 +20,7 @@ const shareOptions = [
   {
     id: "twitter",
     label: "Twitter / X",
-    icon: "🐦",
+    icon: ArrowUpRight,
     color: "#1DA1F2",
     hoverBg: "rgba(29,161,242,0.12)",
     href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(SACRED_MESSAGE)}&url=${encodeURIComponent(TRIBUTE_URL)}`,
@@ -27,7 +28,7 @@ const shareOptions = [
   {
     id: "facebook",
     label: "Facebook",
-    icon: "📘",
+    icon: Share2,
     color: "#1877F2",
     hoverBg: "rgba(24,119,242,0.12)",
     href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(TRIBUTE_URL)}&quote=${encodeURIComponent(SACRED_MESSAGE)}`,
@@ -169,7 +170,7 @@ export default function ShareButton() {
                       e.currentTarget.style.borderColor = "transparent";
                     }}
                   >
-                    <span className="text-xl">{opt.icon}</span>
+                    <ProjectIcon icon={opt.icon} size={15} tone="darkAmber" className="shrink-0" />
                     <div className="flex-1">
                       <p className="text-sm font-medium" style={{ color: "#ffffff" }}>
                         {opt.label}
@@ -205,7 +206,7 @@ export default function ShareButton() {
                     if (!copied) e.currentTarget.style.background = "transparent";
                   }}
                 >
-                  <span className="text-xl">🔗</span>
+                  <ProjectIcon icon={Link2} size={15} tone="darkAmber" className="shrink-0" />
                   <div className="flex-1">
                     <p
                       className="text-sm font-medium"

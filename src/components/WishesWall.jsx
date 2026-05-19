@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import * as firestore from "firebase/firestore";
 import { db } from "../firebase";
 
 const BIRTHDAY = new Date("2026-05-25T00:00:00");
@@ -24,15 +24,17 @@ export default function WishesWall() {
   const PREVIEW_COUNT = 5;
 
   useEffect(() => {
-    const q = query(collection(db, "wishes"), orderBy("timestamp", "desc"));
-    const unsub = onSnapshot(q, (snapshot) => {
+    const q = firestore.query(
+      firestore.collection(db, "wishes"),
+      firestore.orderBy("timestamp", "desc"),
+    );
+    const unsub = firestore.onSnapshot(q, (snapshot) => {
       const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       setWishes(data);
       setLoading(false);
     });
     return () => unsub();
   }, []);
-
   const displayedWishes = expanded ? wishes : wishes.slice(0, PREVIEW_COUNT);
   const hasMore = wishes.length > PREVIEW_COUNT;
 

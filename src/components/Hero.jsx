@@ -1,8 +1,10 @@
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { ChevronDown, Flame } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown, Gift } from "lucide-react";
 import cacLogo from "../assets/logo_left_refined.png";
 import gmpmLogo from "../assets/logo_right_refined.png";
+import { heroBackgroundPhotos } from "../data/galleryPhotos.js";
+import ProjectIcon from "./ProjectIcon.jsx";
 
 // ─── Ember Particle ─────────────────────────────────────────────────────────
 function EmberParticle({ style }) {
@@ -48,7 +50,14 @@ function FireCanvas() {
       const cy = canvas.height / 2;
 
       // Radial amber glow from center
-      const radial = ctx.createRadialGradient(cx, cy, 0, cx, cy, canvas.width * 0.65);
+      const radial = ctx.createRadialGradient(
+        cx,
+        cy,
+        0,
+        cx,
+        cy,
+        canvas.width * 0.65,
+      );
       radial.addColorStop(0, "rgba(217,119,6,0.18)");
       radial.addColorStop(0.4, "rgba(180,60,0,0.10)");
       radial.addColorStop(1, "rgba(26,0,0,0)");
@@ -60,12 +69,14 @@ function FireCanvas() {
       for (let i = 0; i < rayCount; i++) {
         const angle = (i / rayCount) * Math.PI * 2 + t * 0.003;
         const wobble = Math.sin(t * 0.02 + i * 1.3) * 0.06;
-        const length = (canvas.width * 0.55) * (0.7 + 0.3 * Math.sin(t * 0.015 + i * 0.7));
+        const length =
+          canvas.width * 0.55 * (0.7 + 0.3 * Math.sin(t * 0.015 + i * 0.7));
         const alpha = 0.04 + 0.04 * Math.sin(t * 0.02 + i * 0.9);
         const grad = ctx.createLinearGradient(
-          cx, cy,
+          cx,
+          cy,
           cx + Math.cos(angle + wobble) * length,
-          cy + Math.sin(angle + wobble) * length
+          cy + Math.sin(angle + wobble) * length,
         );
         grad.addColorStop(0, `rgba(245,158,11,${alpha * 3})`);
         grad.addColorStop(0.3, `rgba(217,119,6,${alpha})`);
@@ -74,7 +85,7 @@ function FireCanvas() {
         ctx.moveTo(cx, cy);
         ctx.lineTo(
           cx + Math.cos(angle + wobble) * length,
-          cy + Math.sin(angle + wobble) * length
+          cy + Math.sin(angle + wobble) * length,
         );
         ctx.strokeStyle = grad;
         ctx.lineWidth = 28 + 16 * Math.sin(t * 0.01 + i);
@@ -113,23 +124,69 @@ const embers = Array.from({ length: 28 }, (_, i) => ({
   delay: `${Math.random() * 6}s`,
 }));
 
+const HERO_BACKGROUND_PHOTOS = heroBackgroundPhotos;
+
+function getRandomBackgroundIndex(currentIndex = -1) {
+  if (HERO_BACKGROUND_PHOTOS.length <= 1) return 0;
+  let nextIndex = currentIndex;
+  while (nextIndex === currentIndex) {
+    nextIndex = Math.floor(Math.random() * HERO_BACKGROUND_PHOTOS.length);
+  }
+  return nextIndex;
+}
+
 // ─── Fade Up Variant ─────────────────────────────────────────────────────────
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 36 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, delay, ease: "easeOut" },
+  },
 });
 
 // ─── Hero ────────────────────────────────────────────────────────────────────
 export default function Hero() {
+  const [backgroundIndex, setBackgroundIndex] = useState(() =>
+    getRandomBackgroundIndex(),
+  );
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBackgroundIndex((current) => getRandomBackgroundIndex(current));
+    }, 30000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
       style={{
-        background: "radial-gradient(ellipse at center, #3d0000 0%, #1a0000 60%, #0a0000 100%)",
+        background:
+          "radial-gradient(ellipse at center, #3d0000 0%, #1a0000 60%, #0a0000 100%)",
       }}
     >
       {/* Fire Canvas */}
       <FireCanvas />
+
+      {/* Hero background image */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={HERO_BACKGROUND_PHOTOS[backgroundIndex]}
+            src={HERO_BACKGROUND_PHOTOS[backgroundIndex]}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 0.75, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            style={{ filter: "saturate(1.02) contrast(1.1) brightness(0.98)" }}
+          />
+        </AnimatePresence>
+      </div>
 
       {/* Ember Particles */}
       {embers.map((e, i) => (
@@ -141,13 +198,12 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(26,0,0,0.55) 0%, rgba(26,0,0,0.25) 40%, rgba(26,0,0,0.7) 100%)",
+            "radial-gradient(ellipse at center, rgba(26,0,0,0.12) 0%, rgba(26,0,0,0.35) 65%, rgba(10,0,0,0.82) 100%), linear-gradient(to bottom, rgba(26,0,0,0.28) 0%, rgba(26,0,0,0.12) 40%, rgba(26,0,0,0.68) 100%)",
         }}
       />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 py-16 max-w-4xl mx-auto w-full">
-
         {/* Logos */}
         <motion.div
           className="flex items-center justify-center gap-4 md:gap-6 mb-5 md:mb-6"
@@ -167,7 +223,11 @@ export default function Hero() {
             >
               <div
                 className="rounded-full overflow-hidden"
-                style={{ width: "clamp(56px, 12vw, 72px)", height: "clamp(56px, 12vw, 72px)", background: "#2a0000" }}
+                style={{
+                  width: "clamp(56px, 12vw, 72px)",
+                  height: "clamp(56px, 12vw, 72px)",
+                  background: "#2a0000",
+                }}
               >
                 <img
                   src={logo}
@@ -196,7 +256,10 @@ export default function Hero() {
         {/* Divider */}
         <motion.div
           className="w-40 h-px mb-5"
-          style={{ background: "linear-gradient(90deg, transparent, #d97706, transparent)" }}
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, #d97706, transparent)",
+          }}
           variants={fadeUp(0.35)}
           initial="hidden"
           animate="visible"
@@ -238,13 +301,16 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          Founder &amp; General Overseer · Adamimogo Worldwide
+          Planter &amp; Zonal Superintendent · GMPM Adamimogo Global Outreach
         </motion.p>
 
         {/* Gold divider */}
         <motion.div
           className="w-32 h-px mb-6"
-          style={{ background: "linear-gradient(90deg, transparent, #c9a84c, transparent)" }}
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, #c9a84c, transparent)",
+          }}
           variants={fadeUp(0.72)}
           initial="hidden"
           animate="visible"
@@ -253,12 +319,16 @@ export default function Hero() {
         {/* Tagline */}
         <motion.p
           className="font-serif italic text-xl md:text-2xl mb-2 max-w-2xl leading-relaxed"
-          style={{ color: "rgba(255,255,255,0.75)", fontFamily: "'EB Garamond', Georgia, serif" }}
+          style={{
+            color: "rgba(255,255,255,0.75)",
+            fontFamily: "'EB Garamond', Georgia, serif",
+          }}
           variants={fadeUp(0.8)}
           initial="hidden"
           animate="visible"
         >
-          "A man sent by God. A father to nations. A voice that shakes the heavens."
+          "A man sent by God. A father to nations. A voice that shakes the
+          heavens."
         </motion.p>
 
         {/* Bible verse */}
@@ -285,7 +355,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <span>🎂</span>
+          <ProjectIcon icon={Gift} size={14} tone="darkAmber" />
           <span>Celebrating a Legend · 25th May 2026</span>
         </motion.div>
 

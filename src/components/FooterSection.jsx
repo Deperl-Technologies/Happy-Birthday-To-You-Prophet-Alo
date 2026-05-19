@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Flame } from "lucide-react";
+import ProjectIcon from "./ProjectIcon.jsx";
 
 export default function FooterSection() {
   return (
@@ -16,14 +17,13 @@ export default function FooterSection() {
       <div className="max-w-2xl mx-auto px-4 text-center">
         {/* Diamond ornament */}
         <motion.div
-          className="text-2xl mb-6"
-          style={{ color: "#c9a84c" }}
+          className="flex justify-center mb-6"
           initial={{ opacity: 0, scale: 0.7 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          ◆
+          <ProjectIcon icon={Flame} size={16} tone="light" />
         </motion.div>
 
         {/* Honour line */}

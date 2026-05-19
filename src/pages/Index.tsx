@@ -6,10 +6,8 @@ import AdamimogoFM from "../components/AdamimogoFM.jsx";
 import VideoSection from "../components/VideoSection.jsx";
 import BeyondThePulpit from "../components/BeyondThePulpit.jsx";
 import WishesWall from "../components/WishesWall.jsx";
-import TestimonyVideo from "../components/TestimonyVideo.jsx";
 import WordTestimonies from "../components/WordTestimonies.jsx";
 import HighlightReel from "../components/HighlightReel.jsx";
-import VideoTribute from "../components/VideoTribute.jsx";
 import Chamber1 from "../components/Chamber1.jsx";
 import Chamber2 from "../components/Chamber2.jsx";
 import FooterSection from "../components/FooterSection.jsx";
@@ -40,20 +38,14 @@ const Index = () => {
       {/* Section 5 — Beyond The Pulpit: Fire Bento */}
       <BeyondThePulpit />
 
-      {/* Section 5.5 — Testimony Videos: Lives Transformed */}
-      <TestimonyVideo />
-
-      {/* Section 5.6 — Word Testimonies: Encounters With the Man of God */}
+      {/* Section 5.5 — Word Testimonies: Encounters With the Man of God */}
       <WordTestimonies />
 
-      {/* Section 5.7 — Highlight Reel: Moments That Shook the Earth */}
+      {/* Section 5.6 — Highlight Reel: Moments That Shook the Earth */}
       <HighlightReel />
 
       {/* Section 6 — Wishes Wall: Sacred Fire Throne */}
       <WishesWall />
-
-      {/* Section 6.5 — Video Tribute: A Voice That Shakes the Heavens */}
-      <VideoTribute />
 
       {/* Section 7 — Chamber 1: Sacred Fire Sealed Door (visible from May 17) */}
       <Chamber1 />

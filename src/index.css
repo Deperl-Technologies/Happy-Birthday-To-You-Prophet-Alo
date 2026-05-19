@@ -112,9 +112,21 @@
   animation: amber-glow-text 3s ease-in-out infinite;
 }
 
-.bounce-arrow {
-  animation: bounce-arrow 1.8s ease-in-out infinite;
-}
+  .bounce-arrow {
+    animation: bounce-arrow 2s ease-in-out infinite;
+  }
+
+  svg.lucide {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    shape-rendering: geometricPrecision;
+    vector-effect: non-scaling-stroke;
+    filter: drop-shadow(0 0 6px rgba(217, 119, 6, 0.18));
+  }
+
+  svg.lucide[data-icon-badge="true"] {
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.28));
+  }
 
 .crown-pulse {
   animation: crown-pulse 2.5s ease-in-out infinite;
