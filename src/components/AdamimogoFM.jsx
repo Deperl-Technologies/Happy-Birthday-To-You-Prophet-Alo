@@ -149,7 +149,7 @@ export default function AdamimogoFM() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          The Voice of the Nation
+          The Voice of the Light
         </motion.p>
 
         {/* Heading */}
