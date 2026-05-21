@@ -10,6 +10,10 @@ const milestones = [
     desc: "Received the call of God and founded C.A.C Grace of Mercy Prayer Mountain — a fire that has never gone out.",
   },
   {
+    title: "Baba Ori Oke — Oke Erio",
+    desc: "Spent 14 years on Ori Oke Anu, Erio Ekiti — interceding, warring, and forging a prophetic mantle on the mountain that named him The Mountain Father.",
+  },
+  {
     title: "International Headquarters",
     desc: "Established at CAC Power House, Ogombo, Ajah, Lagos State — the nerve centre of the Adamimogo movement.",
   },
@@ -56,7 +60,7 @@ export default function HisStory() {
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden"
-      style={{ background: "#3d0000" }}
+      style={{ background: "transparent" }}
     >
       {/* Subtle top fire glow */}
       <div
@@ -83,9 +87,9 @@ export default function HisStory() {
 
         {/* Heading */}
         <motion.h2
-          className="font-serif text-center text-4xl md:text-5xl font-bold mb-3"
+          className="font-serif text-center text-4xl md:text-5xl font-bold mb-3 hero-text-glow"
           style={{
-            color: "#ffffff",
+            color: "#f5f0eb",
             fontFamily: "'EB Garamond', Georgia, serif",
           }}
           initial={{ opacity: 0, y: 24 }}

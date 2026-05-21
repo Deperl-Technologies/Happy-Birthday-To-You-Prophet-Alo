@@ -2,67 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Sacred Fire Design System — Prophet Sam Olu Alo Tribute */
+/* Gold & Midnight Design System — Prophet Sam Olu Alo Tribute */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 223 55% 8%;
+    --foreground: 32 35% 95%;
 
-    /* Sacred Fire Color Tokens */
-    --fire-deep:      #1a0000;
-    --fire-dark:      #3d0000;
-    --fire-mid:       #6b0000;
-    --fire-bright:    #8b0000;
-    --fire-amber:     #d97706;
-    --fire-amber-hot: #f59e0b;
-    --fire-gold:      #c9a84c;
-    --fire-gold-deep: #b8860b;
-    --fire-cream:     #fdf8f0;
-    --fire-ivory:     #fffdf5;
+    --card: 215 60% 10%;
+    --card-foreground: 32 35% 95%;
+
+    --popover: 215 60% 10%;
+    --popover-foreground: 32 35% 95%;
+
+    --primary: 35 42% 59%;
+    --primary-foreground: 223 55% 8%;
+
+    --secondary: 210 58% 12%;
+    --secondary-foreground: 32 35% 95%;
+
+    --muted: 212 44% 14%;
+    --muted-foreground: 211 18% 56%;
+
+    --accent: 45 70% 69%;
+    --accent-foreground: 223 55% 8%;
+
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 32 35% 95%;
+
+    --border: 215 52% 24%;
+    --input: 215 52% 24%;
+    --ring: 45 70% 69%;
+
+    --radius: 0.9rem;
+
+    --sidebar-background: 223 55% 8%;
+    --sidebar-foreground: 32 35% 95%;
+    --sidebar-primary: 35 42% 59%;
+    --sidebar-primary-foreground: 223 55% 8%;
+    --sidebar-accent: 210 58% 12%;
+    --sidebar-accent-foreground: 32 35% 95%;
+    --sidebar-border: 215 52% 24%;
+    --sidebar-ring: 45 70% 69%;
+
+    --bg-page: radial-gradient(ellipse at top, #0d2b55 0%, #0a1e3d 42%, #060e20 100%);
+    --bg-section: #0a1929;
+    --bg-card: rgba(13, 43, 85, 0.55);
+    --bg-glass: rgba(13, 43, 85, 0.55);
+
+    --text-primary: #f5f0eb;
+    --text-secondary: #a8b8d0;
+    --text-muted: #7a8fa8;
+
+    --accent-gold: #c4a26a;
+    --accent-gold-light: #e8c97a;
+    --accent-gold-deep: #856b3a;
+
+    --border-default: #1e3a5f;
+    --border-gold: rgba(196, 162, 106, 0.3);
+    --divider-subtle: rgba(255, 255, 255, 0.06);
+
+    --overlay-dark: rgba(6, 14, 32, 0.82);
+    --overlay-soft: rgba(6, 14, 32, 0.45);
   }
 
   * {
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    @apply text-foreground;
+    min-height: 100vh;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-family: "Inter", sans-serif;
+    background-attachment: fixed;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100%;
+    background: var(--bg-page);
   }
 
   .font-serif {
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: "EB Garamond", Georgia, serif;
   }
 }
 
-/* Sacred Fire Animations */
 @keyframes ember-float {
   0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
   50% { transform: translateY(-60px) translateX(10px) scale(0.7); opacity: 0.5; }
@@ -70,13 +101,13 @@
 }
 
 @keyframes fire-pulse {
-  0%, 100% { box-shadow: 0 0 20px #d97706, 0 0 40px #d9770644; }
-  50% { box-shadow: 0 0 35px #f59e0b, 0 0 70px #f59e0b55; }
+  0%, 100% { box-shadow: 0 0 18px rgba(196, 162, 106, 0.36), 0 0 36px rgba(232, 201, 122, 0.16); }
+  50% { box-shadow: 0 0 28px rgba(232, 201, 122, 0.56), 0 0 56px rgba(196, 162, 106, 0.24); }
 }
 
 @keyframes amber-glow-text {
-  0%, 100% { text-shadow: 0 0 20px #d97706, 0 0 40px #d9770666; }
-  50% { text-shadow: 0 0 30px #f59e0b, 0 0 60px #f59e0b88; }
+  0%, 100% { text-shadow: 0 0 16px rgba(196, 162, 106, 0.55), 0 0 34px rgba(232, 201, 122, 0.18); }
+  50% { text-shadow: 0 0 28px rgba(232, 201, 122, 0.78), 0 0 60px rgba(196, 162, 106, 0.26); }
 }
 
 @keyframes bounce-arrow {
@@ -91,13 +122,13 @@
 }
 
 @keyframes crown-pulse {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px #d97706); }
-  50% { transform: scale(1.08); filter: drop-shadow(0 0 30px #f59e0b); }
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(196, 162, 106, 0.58)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 30px rgba(232, 201, 122, 0.76)); }
 }
 
 @keyframes wish-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4); }
-  50% { box-shadow: 0 0 0 12px rgba(217, 119, 6, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 162, 106, 0.36); }
+  50% { box-shadow: 0 0 0 12px rgba(196, 162, 106, 0); }
 }
 
 .ember-particle {
@@ -112,21 +143,48 @@
   animation: amber-glow-text 3s ease-in-out infinite;
 }
 
-  .bounce-arrow {
-    animation: bounce-arrow 2s ease-in-out infinite;
-  }
+.hero-text-glow {
+  color: #f5f0eb;
+  text-shadow:
+    0 0 20px rgba(232, 201, 122, 0.9),
+    0 0 40px rgba(196, 162, 106, 0.7),
+    0 0 80px rgba(196, 162, 106, 0.4),
+    0 0 120px rgba(232, 201, 122, 0.15);
+  animation: hero-glow-pulse 3s ease-in-out infinite;
+}
 
-  svg.lucide {
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    shape-rendering: geometricPrecision;
-    vector-effect: non-scaling-stroke;
-    filter: drop-shadow(0 0 6px rgba(217, 119, 6, 0.18));
+@keyframes hero-glow-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 20px rgba(232, 201, 122, 0.9),
+      0 0 40px rgba(196, 162, 106, 0.7),
+      0 0 80px rgba(196, 162, 106, 0.4),
+      0 0 120px rgba(232, 201, 122, 0.15);
   }
+  50% {
+    text-shadow:
+      0 0 30px rgba(232, 201, 122, 1),
+      0 0 60px rgba(196, 162, 106, 0.85),
+      0 0 100px rgba(196, 162, 106, 0.5),
+      0 0 160px rgba(232, 201, 122, 0.25);
+  }
+}
 
-  svg.lucide[data-icon-badge="true"] {
-    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.28));
-  }
+.bounce-arrow {
+  animation: bounce-arrow 2s ease-in-out infinite;
+}
+
+svg.lucide {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  shape-rendering: geometricPrecision;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 6px rgba(196, 162, 106, 0.18));
+}
+
+svg.lucide[data-icon-badge="true"] {
+  filter: drop-shadow(0 0 10px rgba(232, 201, 122, 0.28));
+}
 
 .crown-pulse {
   animation: crown-pulse 2.5s ease-in-out infinite;
@@ -136,47 +194,62 @@
   animation: wish-pulse 2s ease-in-out infinite;
 }
 
-/* Sacred Fire Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #1a0000;
+  background: #060e20;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #d97706;
+  background: #c4a26a;
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #f59e0b;
+  background: #e8c97a;
 }
 
-/* Utility classes */
-.text-amber-fire { color: #d97706; }
-.text-amber-hot  { color: #f59e0b; }
-.text-gold-warm  { color: #c9a84c; }
-.text-gold-deep  { color: #b8860b; }
-.text-fire-deep  { color: #1a0000; }
-.text-muted-white { color: rgba(255,255,255,0.75); }
-.text-faded-white { color: rgba(255,255,255,0.45); }
+.text-amber-fire { color: #c4a26a; }
+.text-amber-hot { color: #e8c97a; }
+.text-gold-warm { color: #c4a26a; }
+.text-gold-deep { color: #856b3a; }
+.text-fire-deep { color: #060e20; }
+.text-muted-white { color: rgba(245, 240, 235, 0.75); }
+.text-faded-white { color: rgba(168, 184, 208, 0.72); }
 
-.bg-fire-deep  { background-color: #1a0000; }
-.bg-fire-dark  { background-color: #3d0000; }
-.bg-fire-mid   { background-color: #6b0000; }
-.bg-fire-bright { background-color: #8b0000; }
-.bg-fire-cream { background-color: #fdf8f0; }
+.bg-fire-deep { background-color: #060e20; }
+.bg-fire-dark { background-color: #0a1929; }
+.bg-fire-mid { background-color: rgba(13, 43, 85, 0.55); }
+.bg-fire-bright { background-color: #1e3a5f; }
+.bg-fire-cream { background-color: #f5f0eb; }
 
-.border-amber-fire { border-color: #d97706; }
-.border-gold-warm  { border-color: #c9a84c; }
+.border-amber-fire { border-color: #c4a26a; }
+.border-gold-warm { border-color: #e8c97a; }
 
 .fire-text-glow {
-  text-shadow: 0 0 30px #d9770699, 0 0 60px #d9770644;
+  text-shadow: 0 0 28px rgba(196, 162, 106, 0.55), 0 0 58px rgba(232, 201, 122, 0.16);
 }
 
 .amber-border-glow {
-  box-shadow: 0 0 20px #d9770644, 0 0 40px #d9770622;
+  box-shadow: 0 0 20px rgba(196, 162, 106, 0.22), 0 0 40px rgba(196, 162, 106, 0.12);
 }
 
 .amber-border-glow-strong {
-  box-shadow: 0 0 25px #d97706aa, 0 0 50px #d9770655;
+  box-shadow: 0 0 25px rgba(196, 162, 106, 0.44), 0 0 50px rgba(232, 201, 122, 0.24);
+}
+
+.page-bg {
+  background: var(--bg-page);
+}
+
+.section-bg {
+  background: var(--bg-section);
+}
+
+.glass-card-bg {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }

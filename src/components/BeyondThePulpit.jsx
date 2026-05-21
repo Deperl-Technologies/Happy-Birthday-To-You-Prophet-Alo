@@ -84,9 +84,9 @@ export default function BeyondThePulpit() {
 
         {/* Heading */}
         <motion.h2
-          className="font-serif text-center text-4xl md:text-5xl font-bold mb-3"
+          className="font-serif text-center text-4xl md:text-5xl font-bold mb-3 hero-text-glow"
           style={{
-            color: "#1a0000",
+            color: "#8b0000",
             fontFamily: "'EB Garamond', Georgia, serif",
           }}
           initial={{ opacity: 0, y: 24 }}

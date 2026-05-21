@@ -6,35 +6,35 @@ import { MEDIA_PAUSE_EVENT, pauseOtherMedia } from "@/lib/audioManager";
 const youtubeVideos = [
   {
     src: "https://www.youtube.com/embed/DeVg520BsJA?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message 1",
+    title: "Prophet Sam Olu Alo — Message",
   },
   {
     src: "https://www.youtube.com/embed/Efufu1ka0lA?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message 2",
+    title: "Prophet Sam Olu Alo — Message",
   },
   {
     src: "https://www.youtube.com/embed/No7coKcUzZI?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message 3",
+    title: "Prophet Sam Olu Alo — Message",
   },
   {
     src: "https://www.youtube.com/embed/x_Cyz7QT5-I?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message 4",
+    title: "Prophet Sam Olu Alo — Message",
   },
   {
     src: "https://www.youtube.com/embed/Ctg-YlakxIQ?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message 5",
+    title: "Prophet Sam Olu Alo — Message",
   },
   {
     src: "https://www.youtube.com/embed/Z_mpEvWhcs0?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message 6",
+    title: "Prophet Sam Olu Alo — Message",
   },
   {
     src: "https://www.youtube.com/embed/82RHsxACrDI?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message 7",
+    title: "Prophet Sam Olu Alo — Message",
   },
   {
     src: "https://www.youtube.com/embed/wIEZdh5zh70?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message 8",
+    title: "Prophet Sam Olu Alo — Message",
   },
 ];
 
@@ -105,9 +105,17 @@ function VideoCard({ video, index, isActive, onActivate }) {
                 boxShadow: "0 0 20px rgba(217,119,6,0.5)",
               }}
             >
-              <Play size={20} fill="#1a0000" strokeWidth={0} style={{ marginLeft: 3 }} />
+              <Play
+                size={20}
+                fill="#1a0000"
+                strokeWidth={0}
+                style={{ marginLeft: 3 }}
+              />
             </div>
-            <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(217,119,6,0.75)" }}>
+            <p
+              className="text-xs tracking-widest uppercase"
+              style={{ color: "rgba(217,119,6,0.75)" }}
+            >
               Tap to play
             </p>
           </div>
@@ -115,10 +123,16 @@ function VideoCard({ video, index, isActive, onActivate }) {
       </button>
 
       <div className="px-4 py-3">
-        <p className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.8)" }}>
+        <p
+          className="text-sm font-medium"
+          style={{ color: "rgba(255,255,255,0.8)" }}
+        >
           {video.title}
         </p>
-        <p className="text-xs mt-1 uppercase tracking-wider" style={{ color: "rgba(217,119,6,0.6)" }}>
+        <p
+          className="text-xs mt-1 uppercase tracking-wider"
+          style={{ color: "rgba(217,119,6,0.6)" }}
+        >
           Prophet Sam Olu Alo
         </p>
       </div>
@@ -137,7 +151,8 @@ export default function VideoSection() {
     };
 
     window.addEventListener(MEDIA_PAUSE_EVENT, handlePauseEvent);
-    return () => window.removeEventListener(MEDIA_PAUSE_EVENT, handlePauseEvent);
+    return () =>
+      window.removeEventListener(MEDIA_PAUSE_EVENT, handlePauseEvent);
   }, []);
 
   const activateVideo = (index) => {
@@ -146,19 +161,26 @@ export default function VideoSection() {
   };
 
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: "#0d0000" }}>
+    <section
+      className="py-20 md:py-28 relative overflow-hidden"
+      style={{ background: "transparent" }}
+    >
       {/* Ambient glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at center, rgba(217,119,6,0.06) 0%, transparent 70%)",
+          background:
+            "radial-gradient(ellipse at center, rgba(217,119,6,0.06) 0%, transparent 70%)",
         }}
       />
 
       {/* Top divider */}
       <div
         className="absolute top-0 inset-x-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, #d97706, transparent)" }}
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, #d97706, transparent)",
+        }}
       />
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
@@ -174,7 +196,7 @@ export default function VideoSection() {
         </motion.p>
 
         <motion.h2
-          className="font-serif text-center font-bold mb-3"
+          className="font-serif text-center font-bold mb-3 hero-text-glow"
           style={{
             color: "#ffffff",
             fontSize: "clamp(2.2rem, 6vw, 4rem)",
@@ -194,7 +216,8 @@ export default function VideoSection() {
           style={{
             width: 80,
             height: 3,
-            background: "linear-gradient(90deg, transparent, #d97706, transparent)",
+            background:
+              "linear-gradient(90deg, transparent, #d97706, transparent)",
           }}
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
@@ -219,7 +242,8 @@ export default function VideoSection() {
         <motion.div
           className="w-full h-px mb-12"
           style={{
-            background: "linear-gradient(90deg, transparent, #d97706, transparent)",
+            background:
+              "linear-gradient(90deg, transparent, #d97706, transparent)",
           }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -235,13 +259,17 @@ export default function VideoSection() {
           transition={{ duration: 0.6 }}
         >
           <Youtube size={24} color="#ff0000" />
-          <h3 className="font-serif font-bold text-xl" style={{ color: "#ffffff", fontFamily: "Georgia, serif" }}>
+          <h3
+            className="font-serif font-bold text-xl hero-text-glow"
+            style={{ color: "#f5f0eb", fontFamily: "Georgia, serif" }}
+          >
             YouTube
           </h3>
           <div
             className="flex-1 h-px"
             style={{
-              background: "linear-gradient(90deg, rgba(217,119,6,0.4), transparent)",
+              background:
+                "linear-gradient(90deg, rgba(217,119,6,0.4), transparent)",
             }}
           />
         </motion.div>

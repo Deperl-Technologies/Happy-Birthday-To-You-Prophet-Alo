@@ -41,7 +41,7 @@ export default function WishesWall() {
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden"
-      style={{ background: "#1a0000" }}
+      style={{ background: "transparent" }}
     >
       {/* Amber radial fire glow */}
       <div

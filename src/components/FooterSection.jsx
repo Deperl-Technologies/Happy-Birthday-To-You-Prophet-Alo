@@ -11,7 +11,10 @@ export default function FooterSection() {
       {/* Top amber gold divider */}
       <div
         className="absolute top-0 inset-x-0 h-0.5"
-        style={{ background: "linear-gradient(90deg, transparent, #c9a84c 30%, #d97706 50%, #c9a84c 70%, transparent)" }}
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, #c9a84c 30%, #d97706 50%, #c9a84c 70%, transparent)",
+        }}
       />
 
       <div className="max-w-2xl mx-auto px-4 text-center">
@@ -74,7 +77,8 @@ export default function FooterSection() {
           style={{
             width: 120,
             height: 1,
-            background: "linear-gradient(90deg, transparent, #d97706, transparent)",
+            background:
+              "linear-gradient(90deg, transparent, #d97706, transparent)",
           }}
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}

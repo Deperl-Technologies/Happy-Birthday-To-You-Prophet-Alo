@@ -122,7 +122,7 @@ export default function AdamimogoFM() {
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden"
-      style={{ background: "#2d0d0d" }}
+      style={{ background: "transparent" }}
     >
       {/* Hidden audio element */}
       <audio ref={audioRef} />
@@ -154,13 +154,11 @@ export default function AdamimogoFM() {
 
         {/* Heading */}
         <motion.h2
-          className="font-serif text-center font-bold mb-3"
+          className="font-serif text-center font-bold mb-3 hero-text-glow"
           style={{
-            color: "#ffffff",
+            color: "#f5f0eb",
             fontSize: "clamp(2.5rem, 7vw, 4.5rem)",
             fontFamily: "Georgia, serif",
-            textShadow:
-              "0 0 30px rgba(245,158,11,0.4), 0 0 60px rgba(245,158,11,0.2)",
           }}
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,6 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Check, Copy, Link2, MessageCircleMore, Share2, X } from "lucide-react";
+import {
+  ArrowUpRight,
+  Check,
+  Copy,
+  Link2,
+  MessageCircleMore,
+  Share2,
+  X,
+} from "lucide-react";
 import ProjectIcon from "./ProjectIcon.jsx";
 
 const TRIBUTE_URL = "https://celebrate-prophet-sam-alo-birthday.vercel.app";
@@ -170,9 +178,17 @@ export default function ShareButton() {
                       e.currentTarget.style.borderColor = "transparent";
                     }}
                   >
-                    <ProjectIcon icon={opt.icon} size={15} tone="darkAmber" className="shrink-0" />
+                    <ProjectIcon
+                      icon={opt.icon}
+                      size={15}
+                      tone="darkAmber"
+                      className="shrink-0"
+                    />
                     <div className="flex-1">
-                      <p className="text-sm font-medium" style={{ color: "#ffffff" }}>
+                      <p
+                        className="text-sm font-medium"
+                        style={{ color: "#ffffff" }}
+                      >
                         {opt.label}
                       </p>
                     </div>
@@ -200,13 +216,21 @@ export default function ShareButton() {
                     textAlign: "left",
                   }}
                   onMouseEnter={(e) => {
-                    if (!copied) e.currentTarget.style.background = "rgba(201,168,76,0.08)";
+                    if (!copied)
+                      e.currentTarget.style.background =
+                        "rgba(201,168,76,0.08)";
                   }}
                   onMouseLeave={(e) => {
-                    if (!copied) e.currentTarget.style.background = "transparent";
+                    if (!copied)
+                      e.currentTarget.style.background = "transparent";
                   }}
                 >
-                  <ProjectIcon icon={Link2} size={15} tone="darkAmber" className="shrink-0" />
+                  <ProjectIcon
+                    icon={Link2}
+                    size={15}
+                    tone="darkAmber"
+                    className="shrink-0"
+                  />
                   <div className="flex-1">
                     <p
                       className="text-sm font-medium"
@@ -214,11 +238,18 @@ export default function ShareButton() {
                     >
                       {copied ? "Link Copied!" : "Copy Link"}
                     </p>
-                    <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
+                    <p
+                      className="text-xs mt-0.5"
+                      style={{ color: "rgba(255,255,255,0.35)" }}
+                    >
                       {TRIBUTE_URL.replace("https://", "")}
                     </p>
                   </div>
-                  <span style={{ color: copied ? "#c9a84c" : "rgba(217,119,6,0.5)" }}>
+                  <span
+                    style={{
+                      color: copied ? "#c9a84c" : "rgba(217,119,6,0.5)",
+                    }}
+                  >
                     {copied ? <Check size={16} /> : <Copy size={16} />}
                   </span>
                 </button>
@@ -261,7 +292,11 @@ export default function ShareButton() {
           cursor: "pointer",
           backdropFilter: "blur(8px)",
         }}
-        whileHover={{ scale: 1.06, boxShadow: "0 0 28px rgba(217,119,6,0.55), 0 4px 20px rgba(0,0,0,0.5)" }}
+        whileHover={{
+          scale: 1.06,
+          boxShadow:
+            "0 0 28px rgba(217,119,6,0.55), 0 4px 20px rgba(0,0,0,0.5)",
+        }}
         whileTap={{ scale: 0.96 }}
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}

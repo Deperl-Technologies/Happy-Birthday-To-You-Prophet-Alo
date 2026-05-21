@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
 
 const locations = [
   {
     flag: "🇳🇬",
     city: "Lagos",
-    country: "Nigeria",
-    desc: "International Headquarters — CAC Power House, Ogombo, Ajah",
+    country: "NIGERIA",
+    desc: "International Headquarters — Ogombo, Ikotun, Adamimogo Jesus City, Ikorodu",
   },
   {
     flag: "🇳🇬",
@@ -19,6 +18,18 @@ const locations = [
     city: "Ido-Ekiti",
     country: "Nigeria",
     desc: "The Root & Home — Where the prophet's destiny began",
+  },
+  {
+    flag: "🇳🇬",
+    city: "Akure",
+    country: "NIGERIA",
+    desc: "After Orange FM, Shagari Village, Irese Road — the anointing lights up Ondo State.",
+  },
+  {
+    flag: "🇳🇬",
+    city: "Ado Ekiti",
+    country: "NIGERIA",
+    desc: "Iworoko Road — a return to roots, carrying fire back to Ekiti soil.",
   },
   {
     flag: "🇳🇬",
@@ -59,16 +70,17 @@ export default function TheEmpire() {
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden"
-      style={{ background: "#1a0000" }}
+      style={{ background: "transparent" }}
     >
-      {/* Subtle fire glow top */}
       <div
         className="absolute top-0 inset-x-0 h-px pointer-events-none"
-        style={{ background: "linear-gradient(90deg, transparent, #d97706, transparent)" }}
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, #d97706, transparent)",
+        }}
       />
 
       <div className="max-w-5xl mx-auto px-4">
-        {/* Editorial label */}
         <motion.p
           className="text-center text-xs tracking-[0.4em] uppercase mb-5 font-medium"
           style={{ color: "#d97706" }}
@@ -80,14 +92,12 @@ export default function TheEmpire() {
           Global Reach · Adamimogo Worldwide
         </motion.p>
 
-        {/* Huge heading */}
         <motion.h2
-          className="font-serif text-center font-bold mb-3"
+          className="font-serif text-center font-bold mb-3 hero-text-glow"
           style={{
-            color: "#ffffff",
+            color: "#f5f0eb",
             fontSize: "clamp(2.5rem, 7vw, 5rem)",
             fontFamily: "'EB Garamond', Georgia, serif",
-            textShadow: "0 0 40px #d9770633",
           }}
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -97,13 +107,13 @@ export default function TheEmpire() {
           The Adamimogo Empire
         </motion.h2>
 
-        {/* Amber underline */}
         <motion.div
           className="mx-auto mb-4"
           style={{
             width: 100,
             height: 3,
-            background: "linear-gradient(90deg, transparent, #d97706, transparent)",
+            background:
+              "linear-gradient(90deg, transparent, #d97706, transparent)",
           }}
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
@@ -111,7 +121,6 @@ export default function TheEmpire() {
           transition={{ duration: 0.6, delay: 0.2 }}
         />
 
-        {/* Subtitle */}
         <motion.p
           className="font-serif italic text-center text-lg mb-8"
           style={{
@@ -126,17 +135,18 @@ export default function TheEmpire() {
           From Ido-Ekiti to the ends of the earth
         </motion.p>
 
-        {/* Amber divider */}
         <motion.div
           className="w-full h-px mb-12"
-          style={{ background: "linear-gradient(90deg, transparent, #d97706, transparent)" }}
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, #d97706, transparent)",
+          }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
         />
 
-        {/* Location cards grid — single col on mobile, 2 on md+ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
           {locations.map((loc, i) => (
             <motion.div
@@ -158,10 +168,10 @@ export default function TheEmpire() {
                 borderColor: "#f59e0b",
               }}
             >
-              {/* Flag */}
-              <div className="text-3xl md:text-4xl mb-3 text-center">{loc.flag}</div>
+              <div className="text-3xl md:text-4xl mb-3 text-center">
+                {loc.flag}
+              </div>
 
-              {/* City */}
               <h3
                 className="font-serif font-bold text-center mb-1"
                 style={{
@@ -173,7 +183,6 @@ export default function TheEmpire() {
                 {loc.city}
               </h3>
 
-              {/* Country */}
               <p
                 className="text-xs tracking-[0.2em] uppercase text-center mb-3 font-medium"
                 style={{ color: "#d97706" }}
@@ -181,7 +190,6 @@ export default function TheEmpire() {
                 {loc.country}
               </p>
 
-              {/* Description */}
               <p
                 className="text-sm text-center leading-relaxed"
                 style={{ color: "rgba(255,255,255,0.5)" }}
@@ -192,7 +200,6 @@ export default function TheEmpire() {
           ))}
         </div>
 
-        {/* Footnote */}
         <motion.p
           className="text-center text-xs tracking-[0.3em] uppercase mt-14"
           style={{ color: "rgba(217,119,6,0.5)" }}

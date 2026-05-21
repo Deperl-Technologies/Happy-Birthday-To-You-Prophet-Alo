@@ -153,7 +153,7 @@ export default function HighlightReel() {
     <section
       ref={sectionRef}
       className="py-20 md:py-28 relative overflow-hidden"
-      style={{ background: "#0d0000" }}
+      style={{ background: "transparent" }}
     >
       {BACKGROUND_VIDEO_URL && (
         <video
@@ -196,12 +196,11 @@ export default function HighlightReel() {
         </motion.p>
 
         <motion.h2
-          className="font-serif text-center font-bold mb-3"
+          className="font-serif text-center font-bold mb-3 hero-text-glow"
           style={{
-            color: "#ffffff",
+            color: "#f5f0eb",
             fontSize: "clamp(2.2rem, 6.5vw, 4.5rem)",
             fontFamily: "'EB Garamond', Georgia, serif",
-            textShadow: "0 0 50px rgba(201,168,76,0.4), 0 0 100px rgba(217,119,6,0.2)",
           }}
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}

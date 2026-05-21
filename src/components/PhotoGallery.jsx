@@ -247,7 +247,7 @@ export default function PhotoGallery() {
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden"
-      style={{ background: "#1a0000" }}
+      style={{ background: "transparent" }}
     >
       {/* Ambient glow */}
       <div
@@ -282,12 +282,11 @@ export default function PhotoGallery() {
 
         {/* Heading */}
         <motion.h2
-          className="font-serif text-center font-bold mb-3"
+          className="font-serif text-center font-bold mb-3 hero-text-glow"
           style={{
-            color: "#ffffff",
+            color: "#f5f0eb",
             fontSize: "clamp(2.2rem, 6vw, 4rem)",
-            fontFamily: "Georgia, serif",
-            textShadow: "0 0 30px rgba(217,119,6,0.3)",
+            fontFamily: "'EB Garamond', Georgia, serif",
           }}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

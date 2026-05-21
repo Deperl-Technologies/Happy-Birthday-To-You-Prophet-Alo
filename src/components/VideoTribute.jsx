@@ -64,7 +64,7 @@ export default function VideoTribute() {
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden"
-      style={{ background: "#1a0000" }}
+      style={{ background: "transparent" }}
     >
       {/* Background glow */}
       <div

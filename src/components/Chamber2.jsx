@@ -28,7 +28,7 @@ export default function Chamber2() {
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden min-h-screen flex items-center"
-      style={{ background: "#1a0000" }}
+      style={{ background: "transparent" }}
     >
       {/* Amber radial fire glow — more intense than Chamber 1 */}
       <div
@@ -253,11 +253,10 @@ export default function Chamber2() {
                     👑
                   </div>
                   <h3
-                    className="font-serif font-bold text-2xl md:text-3xl text-center"
+                    className="font-serif font-bold text-2xl md:text-3xl text-center hero-text-glow"
                     style={{
-                      color: "#c9a84c",
+                      color: "#f5f0eb",
                       fontFamily: "'EB Garamond', Georgia, serif",
-                      textShadow: "0 0 20px rgba(201,168,76,0.5)",
                     }}
                   >
                     A Royal Proclamation

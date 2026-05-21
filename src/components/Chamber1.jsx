@@ -29,7 +29,7 @@ export default function Chamber1() {
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden min-h-screen flex items-center"
-      style={{ background: "#1a0000" }}
+      style={{ background: "transparent" }}
     >
       {/* Amber radial glow */}
       <div
@@ -69,9 +69,9 @@ export default function Chamber1() {
 
               {/* Heading */}
               <h2
-                className="font-serif font-bold text-3xl md:text-4xl mb-4"
+                className="font-serif font-bold text-3xl md:text-4xl mb-4 hero-text-glow"
                 style={{
-                  color: "#ffffff",
+                  color: "#f5f0eb",
                   fontFamily: "'EB Garamond', Georgia, serif",
                 }}
               >
