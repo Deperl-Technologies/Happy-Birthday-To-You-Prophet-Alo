@@ -395,7 +395,8 @@ export default function Chamber2() {
                       {[
                         "🇳🇬 Lagos, Nigeria",
                         "🇳🇬 Ibadan, Nigeria",
-                        "🇳🇬 Ido-Ekiti, Nigeria",
+                        "🇳🇬 Ekiti, Nigeria",
+                        "🇳🇬 Akure, Nigeria",
                         "🇳🇬 Abeokuta, Nigeria",
                         "🇬🇧 Dagenham, London",
                         "🇨🇦 Toronto, Canada",
