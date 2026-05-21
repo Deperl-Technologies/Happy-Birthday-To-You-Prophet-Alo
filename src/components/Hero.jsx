@@ -388,7 +388,7 @@ export default function Hero() {
               GMPM, Ibadan
             </span>{" "}
             — as a small token of our gratitude, love and honour to you on your
-            birthday. You are more than a pastor to us. You are our father, our
+            birthday. You are more than a prophet to us. You are our father, our
             covering, and God's gift to this generation.<br /><span style={{ color: "#d97706", fontWeight: "bold" }}>
               Happy Birthday, Daddy.
             </span>{" "}
