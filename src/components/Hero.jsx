@@ -359,6 +359,43 @@ export default function Hero() {
           <span>Celebrating a Legend · 25th May 2026</span>
         </motion.div>
 
+        {/* Dedication note */}
+        <motion.div
+          variants={fadeUp(0.95)}
+          className="max-w-xl mx-auto mb-6 px-6 py-4 rounded-xl text-center"
+          style={{
+            background: "rgba(26,0,0,0.6)",
+            border: "1px solid rgba(217,119,6,0.3)",
+            backdropFilter: "blur(8px)",
+          }}
+        >
+          <p
+            className="text-xs uppercase tracking-[0.25em] mb-2"
+            style={{ color: "#d97706" }}
+          >
+            ✦ A Birthday Gift From Your Children ✦
+          </p>
+          <p
+            className="italic leading-relaxed"
+            style={{
+              color: "rgba(255,255,255,0.82)",
+              fontFamily: "Georgia, serif",
+              fontSize: "clamp(0.85rem, 2vw, 1rem)",
+            }}
+          >
+            This tribute was lovingly built by your children at{" "}
+            <span style={{ color: "#d97706", fontWeight: "bold" }}>
+              GMPM, Ibadan
+            </span>{" "}
+            — as a small token of our gratitude, love and honour to you on your
+            birthday. You are more than a pastor to us. You are our father, our
+            covering, and God's gift to this generation.<br /><span style={{ color: "#d97706", fontWeight: "bold" }}>
+              Happy Birthday, Daddy.
+            </span>{" "}
+            🎂🙏
+          </p>
+        </motion.div>
+
         {/* CTA Button */}
         <motion.a
           href="https://celebrate-prophet-sam-alo-birthday.vercel.app"
