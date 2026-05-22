@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CHAMBER2_CODE = "PROPHET2026";
-const UNLOCK_DATE = new Date("2026-05-19T00:00:00");
+const UNLOCK_DATE = new Date("2026-05-25T00:00:00");
 
 export default function Chamber2() {
   const [code, setCode] = useState("");
