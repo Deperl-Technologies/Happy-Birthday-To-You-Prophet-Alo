@@ -6,35 +6,35 @@ import { MEDIA_PAUSE_EVENT, pauseOtherMedia } from "@/lib/audioManager";
 const youtubeVideos = [
   {
     src: "https://www.youtube.com/embed/DeVg520BsJA?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message",
+    title: "Prophet Sam Olu Alo",
   },
   {
     src: "https://www.youtube.com/embed/Efufu1ka0lA?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message",
+    title: "Prophet Sam Olu Alo",
   },
   {
     src: "https://www.youtube.com/embed/No7coKcUzZI?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message",
+    title: "Prophet Sam Olu Alo",
   },
   {
     src: "https://www.youtube.com/embed/x_Cyz7QT5-I?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message",
+    title: "Prophet Sam Olu Alo",
   },
   {
     src: "https://www.youtube.com/embed/Ctg-YlakxIQ?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message",
+    title: "Prophet Sam Olu Alo",
   },
   {
     src: "https://www.youtube.com/embed/Z_mpEvWhcs0?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message",
+    title: "Prophet Sam Olu Alo",
   },
   {
     src: "https://www.youtube.com/embed/82RHsxACrDI?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message",
+    title: "Prophet Sam Olu Alo",
   },
   {
     src: "https://www.youtube.com/embed/wIEZdh5zh70?enablejsapi=1&rel=0&modestbranding=1",
-    title: "Prophet Sam Olu Alo — Message",
+    title: "Prophet Sam Olu Alo",
   },
 ];
 
